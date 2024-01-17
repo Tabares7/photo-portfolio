@@ -1,5 +1,7 @@
 ---
 import Navbar  from '../components/Navbar.astro';
+// Supports weights 100-900
+import '@fontsource-variable/fraunces';
 interface Props {
 	title: string;
 }
@@ -14,16 +16,19 @@ const { title } = Astro.props;
 		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" />
 		<title>{title}</title>
 	</head>
 	<body>
 		<Navbar />
 		<slot />
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
 	</body>
 </html>
 <style is:global>
 	
-	html {
+	body {
+  		font-family: 'Fraunces Variable', sans-serif;
 	}
 </style>
